@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Yeseva One", serif;
+    background-image: url(../src/images/92BAC302.png);
+    background-size: cover;
+    color: #27130E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 40px;
+    width: 80%;
+    max-width: 1000px;
+    align-items: center;
+}
+
+section {
+    display: contents; 
+}
+
+section img {
+    width: 100%;
+    height: 100%;
+    border-radius: 7%;
+}
+
+section a {
+    position: relative;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    border-radius: 7%;
+    transition: opacity 0.3s ease-in-out;
+}
+section a:nth-child(1) img {
+    grid-column: 1;
+}
+
+section a:nth-child(2) img {
+    grid-column: 2;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    margin: 0 auto;
+}
+section a:hover {
+    background-color: #27130E;
+    height: 100%;
+}
+section a:hover img{
+    opacity: 0.5;
+    height: 100%;
+}
+section a:hover .overlay-text {
+    opacity: 1;
+}
+section a:active {
+    box-shadow: 7px 7px 0px #9b6b55;
+}
+
+p {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 52px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        grid-template-rows: auto auto auto;
+        text-align: center;
+        justify-items: center;
+    }
+    
+    section {
+        grid-template-columns: 1fr;
+    }
+    section a {
+        max-height: 230px;
+        max-width: 230px;
+        background-color: #27130E;
+    }
+    section img {
+        max-height: 230px;
+        max-width: 230px;
+        opacity: 0.5;
+    }
+    p {
+        grid-row: 1;
+        margin-bottom: 10px;
+        font-size: 40px; 
+    }
+    .overlay-text {
+        opacity: 1;
+        font-size: 34px; 
+    }
+}
+
+@media (max-width: 480px) {
+    p {
+        font-size: 28px; 
+    }
+    .overlay-text {
+        opacity: 1;
+        font-size: 24px; 
+    }
+}
